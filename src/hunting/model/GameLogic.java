@@ -1,4 +1,4 @@
 package hunting.model;
 
-public class GameTable {
+public class GameLogic {
 }

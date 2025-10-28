@@ -1,12 +1,12 @@
 package hunting.model;
 
-public class Hunter extends Figure {
-    public Hunter(int row, int col) {
+public class Runner extends Figure{
+    public Runner(int row, int col) {
         super(row,col);
     }
 
     @Override
     public String getType(){
-        return "HUNTER";
+        return "Runner";
     }
 }
