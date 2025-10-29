@@ -22,6 +22,6 @@ public abstract class Figure {
         this.col = newCol;
     }
 
-    // A figuratípus megkülönböztetésére (hasznos lehet a GUI-ban is)
+    // Figure típus megkülönb.
     public abstract String getType();
 }

@@ -1,20 +1,24 @@
 package hunting;
 
-import hunting.controller.GameController;
 import hunting.model.GameLogic;
-import hunting.view.GamePanel;
-
-
+import hunting.view.GameFrame;
+import hunting.controller.GameController;
 
 public class Main {
-    public static void main(String[] args){
-        int startingSize = 5;
-        GameLogic logics = new GameLogic(startingSize);
-        GamePanel view = new GamePanel();
-        GameController controller = new GameController(logics,view);
+    public static void main(String[] args) {
+        final int STARTER_SIZE = 5;
 
-        view.setController(controller);
-        controller.refreshView();
-        view.setVisible(true);
+        // Swing GUI init call on EDT
+        javax.swing.SwingUtilities.invokeLater(() -> {
+            try {
+                GameLogic model = new GameLogic(STARTER_SIZE);
+                GameFrame view = new GameFrame(STARTER_SIZE);
+                new GameController(model, view);
+                view.setVisible(true);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
 }

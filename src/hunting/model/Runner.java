@@ -7,6 +7,6 @@ public class Runner extends Figure{
 
     @Override
     public String getType(){
-        return "Runner";
+        return "RUNNER";
     }
 }

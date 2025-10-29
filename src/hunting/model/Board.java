@@ -16,17 +16,17 @@ public class Board {
     private void setupInitPos(){
         // Kezdeti állapot törlése
         fields = new Figure[size][size];
-        int center = size / 2; // Pl.: 5x5 esetén 2
+        int center = size / 2; // Flooring, Pl.: 5x5 esetén 2
 
-        // 1. Runner (Menekülő) - középen
+        // Runner - középen
         Runner runner = new Runner(center, center);
         fields[center][center] = runner;
 
-        // 2. Hunterek (Támadók) - négy sarokban
-        fields[0][0] = new Hunter(0, 0);                 // Bal felső
-        fields[0][size - 1] = new Hunter(0, size - 1);     // Jobb felső
-        fields[size - 1][0] = new Hunter(size - 1, 0);     // Bal alsó
-        fields[size - 1][size - 1] = new Hunter(size - 1, size - 1); // Jobb alsó
+        // Hunterek - négy sarokban
+        fields[0][0] = new Hunter(0, 0);                 // top left
+        fields[0][size - 1] = new Hunter(0, size - 1);     // top right
+        fields[size - 1][0] = new Hunter(size - 1, 0);     // bottom left
+        fields[size - 1][size - 1] = new Hunter(size - 1, size - 1); // bottom right
     }
 
     public int getSize() {
